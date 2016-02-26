@@ -3,7 +3,7 @@
 
 ## Objectives
 
-1.  Classify algorithms by measuring run time for a range of problem sizes.
+1.  Classify algorithms by measuring runtime for a range of problem sizes.
 
 
 ## Overview
@@ -127,9 +127,9 @@ When you check out the respository for this lab, you should find a file structur
 
 In the subdirectory `javacs-lab04/src/com/flatironschool/javacs` you'll find the source files you need for this lab:
 
-    1.  `Profiler.java` contains the implementation of the `Profiler` class described above.  You will use this class, but you don't have to know how it works.  But feel free to read the source.
+1.  `Profiler.java` contains the implementation of the `Profiler` class described above.  You will use this class, but you don't have to know how it works.  But feel free to read the source.
 
-    2.  `ProfileAdd.java` contains starter code for this lab, including the example, above, which profiles `ArrayList.add`.  You will modify this file to profile a few other methods.
+2.  `ProfileAdd.java` contains starter code for this lab, including the example, above, which profiles `ArrayList.add`.  You will modify this file to profile a few other methods.
 
 Also, in `javacs-lab04`, you'll find the Ant build file `build.xml`.  
 
