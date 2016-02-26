@@ -32,12 +32,12 @@ Here's an example that shows how to use the profiler:
 				}
 			}
 		};
-		
+
 		String title = "ArrayList add end";
 		Profiler profiler = new Profiler(title, timeable);
 
-        int startN = 4000;
-		int endMillis = 1000;		
+		int startN = 4000;
+		int endMillis = 1000;
 		XYSeries series = profiler.timingLoop(startN, endMillis);
 		profiler.plotResults(series);
 	}
@@ -45,13 +45,13 @@ Here's an example that shows how to use the profiler:
 
 This method measures the time it takes to run `add` on an `ArrayList`, which adds the new element at the end.  We'll explain the code and then show the results.
 
-In order to use `Profiler`, we need to create a `Timeable` object that provides two methods: `setup` and `timeIt`.  The `setup` method does whatever needs to be done before we start the clock; in this case it creates an empty list.  Then `timeIt` does whatever operation we are trying to measure; in this case it add `n` elements to the list.
+In order to use `Profiler`, we need to create a `Timeable` object that provides two methods: `setup` and `timeIt`.  The `setup` method does whatever needs to be done before we start the clock; in this case it creates an empty list.  Then `timeIt` does whatever operation we are trying to measure; in this case it adds `n` elements to the list.
 
 The code that creates `timeable` is an anonymous class that defines a new implementation of the `Timeable` interface and creates an instance of the new class at the same time.  If you are not familiar with anonymous classes, you can [read about them here](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html).
 
 The next step is to create the `Profiler` object, passing the `Timeable` object and a title as parameters.
 
-The `Profiler` provides `timingLoop` which uses the `Timeable` object to measure the runtime of `timeIt` for a range of values of `n`; it takes two parameters:
+The `Profiler` provides `timingLoop` which uses the `Timeable` object to measure the runtime of `timeMe` for a range of values of `n`; it takes two parameters:
 
 * `startN` is the value of `n` the timing loop should start at.
 
@@ -75,7 +75,7 @@ When we ran this code, we got this output:
     8192000, 544
     16384000, 1325
 
-The first column is problem size, `n`; the second column is runtime in milliseconds.  The first few measurements are pretty noisy, it might be better to set `startN` around 64000. 
+The first column is problem size, `n`; the second column is runtime in milliseconds.  The first few measurements are pretty noisy, it might be better to set `startN` around 64000.
 
 The result from `timingLoop` is an `XYSeries` that contains this data.  If you pass this series to `plotResults`, it generates a plot like this:
 
@@ -91,7 +91,7 @@ Based on our understanding of how `ArrayList` works, we expect the `add` method 
 To test that theory, we could plot total runtime versus problem size, and we should see a straight line, at least for problem sizes that are big enough to measure accurately.  Mathematically, we can write the function for that line:
 
 <tt>runtime = a + b * n</tt>
-     
+
 Where `a` is the intercept of the line and `b` is the slope.
 
 On the other hand, if `add` is linear, the total time for `n` adds would be quadratic.  If we plot runtime versus problem size, we expect to see a parabola.  Or mathematically, something like:
@@ -131,7 +131,7 @@ In the subdirectory `javacs-lab04/src/com/flatironschool/javacs` you'll find the
 
 2.  `ProfileAdd.java` contains starter code for this lab, including the example, above, which profiles `ArrayList.add`.  You will modify this file to profile a few other methods.
 
-Also, in `javacs-lab04`, you'll find the Ant build file `build.xml`.  
+Also, in `javacs-lab04`, you'll find the Ant build file `build.xml`.
 
 
 *  In `javacs-lab04` run `ant ProfileAdd` to run `ProfileAdd.java`.  You should get results similar to ours, but you might have to adjust `startN` or `endMillis`.  The estimated slope should be close to 1, indicating that performing `n` add operations takes time proportional to `n` raised to the exponent 1; that is, it is O(`n`).
@@ -139,7 +139,7 @@ Also, in `javacs-lab04`, you'll find the Ant build file `build.xml`.
 *  In `ProfileAdd.java`, you'll find an empy method named `profileArrayListAddBeginning`.  Fill in the body of this method with code that tests `ArrayList.add`, always putting the new element at the beginning.  If you start with a copy of `profileArrayListAddEnd`, you should only have to make a few changes.  Add a line in `main` to invoke this method.
 
     Run `ant ProfileAdd` again and interpret the results.  Based on our understanding of how `ArrayList` works, we expect each add operation to be linear, so the total time for `n` adds should be quadratic.  If so, the estimated slope of the line, on a log-log scale, should be near 2.  Is it?
-    
+
 *  Now let's compare that to the performance of `LinkedList`.  Fill in the body of `profileLinkedListAddBeginning` and use it to classify `LinkedList.add` when we put the new element at the beginning.  What performance do you expect?  Are the results consistent with your expectations?
 
 *  Finally, fill in the body of `profileLinkedListAddEnd` and use it to classify `LinkedList.add` when we put the new element at the end.  What performance do you expect?  Are the results consistent with your expectations?
