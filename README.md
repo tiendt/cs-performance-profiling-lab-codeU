@@ -106,7 +106,7 @@ Why?  Let's suppose that runtime is proportional to `n`<sup>k</sup>, but we don'
 
 For large values of `n`, the term with the largest exponent is the most important, so:
 
-<tt>runtime ≈ c * n<sup>k</sup> </tt>    for large `n`.
+<tt>runtime ≈ c * n<sup>k</sup> </tt>
 
 Where ≈ is the symbol for "approximately equal".  Now, if we take the log of both sides of this equation:
 
