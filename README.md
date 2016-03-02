@@ -59,7 +59,7 @@ The `Profiler` provides `timingLoop` which uses the `Timeable` object stored as 
 
 When you run these experiments, you might have to adjust these parameters.  If `startN` is too low, the runtime might be too short to measure accurately.  If `endMillis` is too low, you might not get enough data to see a clear relationship between problem size and run time.
 
-When we ran this code, we got this output:
+This code is in `ProfileAdd.java`, which you'll run in the next lab.  When we ran it, we got this output:
 
     4000, 3
     8000, 0
