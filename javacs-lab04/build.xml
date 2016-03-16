@@ -196,6 +196,21 @@
             <classpath refid="JavaCS.classpath"/>
         </java>
     </target>
+    <target name="HelloJedis">
+        <java classname="com.flatironschool.javacs.HelloJedis" failonerror="true" fork="yes">
+            <classpath refid="JavaCS.classpath"/>
+        </java>
+    </target>
+    <target name="WikiParser">
+        <java classname="com.flatironschool.javacs.WikiParser" failonerror="true" fork="yes">
+            <classpath refid="JavaCS.classpath"/>
+        </java>
+    </target>
+    <target name="WikiPhilosophy">
+        <java classname="com.flatironschool.javacs.WikiPhilosophy" failonerror="true" fork="yes">
+            <classpath refid="JavaCS.classpath"/>
+        </java>
+    </target>
     <target name="junitreport">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
@@ -204,4 +219,5 @@
             <report format="frames" todir="${junit.output.dir}"/>
         </junitreport>
     </target>
+    <target depends="clean,build" name="test"/>
 </project>
