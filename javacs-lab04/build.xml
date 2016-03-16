@@ -204,4 +204,5 @@
             <report format="frames" todir="${junit.output.dir}"/>
         </junitreport>
     </target>
+    <target depends="clean,build" name="test"/>
 </project>
