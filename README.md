@@ -137,7 +137,7 @@ Also, in `javacs-lab04`, you'll find the Ant build file `build.xml`.
 
 *  In `javacs-lab04` run `ant ProfileAdd` to run `ProfileAdd.java`.  You should get results similar to ours, but you might have to adjust `startN` or `endMillis`.  The estimated slope should be close to 1, indicating that performing `n` add operations takes time proportional to `n` raised to the exponent 1; that is, it is O(`n`).
 
-*  In `ProfileAdd.java`, you'll find an empy method named `profileArrayListAddBeginning`.  Fill in the body of this method with code that tests `ArrayList.add`, always putting the new element at the beginning.  If you start with a copy of `profileArrayListAddEnd`, you should only have to make a few changes.  Add a line in `main` to invoke this method.
+*  In `ProfileAdd.java`, you'll find an empty method named `profileArrayListAddBeginning`.  Fill in the body of this method with code that tests `ArrayList.add`, always putting the new element at the beginning.  If you start with a copy of `profileArrayListAddEnd`, you should only have to make a few changes.  Add a line in `main` to invoke this method.
 
     Run `ant ProfileAdd` again and interpret the results.  Based on our understanding of how `ArrayList` works, we expect each add operation to be linear, so the total time for `n` adds should be quadratic.  If so, the estimated slope of the line, on a log-log scale, should be near 2.  Is it?
 

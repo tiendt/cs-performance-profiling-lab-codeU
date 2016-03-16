@@ -40,76 +40,31 @@ public class ProfileAdd {
 		int endMillis = 1000;
 		runProfiler("ArrayList add end", timeable, startN, endMillis);
 	}
-	
+
 	/**
 	 * Characterize the run time of adding to the beginning of an ArrayList
 	 */
 	public static void profileArrayListAddBeginning() {
-		Timeable timeable = new Timeable() {
-			List<String> list;
-
-			public void setup(int n) {
-				list = new ArrayList<String>();
-			}
-
-			public void timeMe(int n) {
-				for (int i=0; i<n; i++) {
-					list.add(0, "a string");
-				}
-			}
-		};
-		int startN = 4000;
-		int endMillis = 1000;
-		runProfiler("ArrayList add beginning", timeable, startN, endMillis);
+		// Fill me in!
 	}
 
 	/**
 	 * Characterize the run time of adding to the beginning of a LinkedList
 	 */
 	public static void profileLinkedListAddBeginning() {
-		Timeable timeable = new Timeable() {
-			List<String> list;
-
-			public void setup(int n) {
-				list = new LinkedList<String>();
-			}
-
-			public void timeMe(int n) {
-				for (int i=0; i<n; i++) {
-					list.add(0, "a string");
-				}
-			}
-		};
-		int startN = 64000;
-		int endMillis = 1000;
-		runProfiler("LinkedList add beginning", timeable, startN, endMillis);
+		// Fill me in!
 	}
 
 	/**
 	 * Characterize the run time of adding to the end of a LinkedList
 	 */
 	public static void profileLinkedListAddEnd() {
-		Timeable timeable = new Timeable() {
-			List<String> list;
-
-			public void setup(int n) {
-				list = new LinkedList<String>();
-			}
-
-			public void timeMe(int n) {
-				for (int i=0; i<n; i++) {
-					list.add("a string");
-				}
-			}
-		};
-		int startN = 4000;
-		int endMillis = 1000;
-		runProfiler("LinkedList add end", timeable, startN, endMillis);
+		// Fill me in!
 	}
 
 	/**
 	 * Runs the profiles and displays results.
-	 * 
+	 *
 	 * @param timeable
 	 * @param startN
 	 * @param endMillis
